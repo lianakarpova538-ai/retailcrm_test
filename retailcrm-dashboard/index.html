@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetailCRM Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📊 Дашборд заказов RetailCRM</h1>
+    
+    <div class="stats">
+      <div class="stat-card">
+        <h3>Всего заказов</h3>
+        <p id="total-orders">—</p>
+      </div>
+      <div class="stat-card">
+        <h3>Общая сумма</h3>
+        <p id="total-sum">—</p>
+      </div>
+      <div class="stat-card">
+        <h3>Средний чек</h3>
+        <p id="avg-order">—</p>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="orders-chart"></canvas>
+    </div>
+
+    <div class="table-container">
+      <h2>Последние заказы</h2>
+      <table id="orders-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Клиент</th>
+            <th>Телефон</th>
+            <th>Сумма</th>
+            <th>Статус</th>
+            <th>Дата</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <tr><td colspan="6">Загрузка...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
