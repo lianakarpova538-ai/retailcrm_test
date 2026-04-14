@@ -2,9 +2,9 @@
 
 ## Что сделано
 
-Автоматизация загрузки заказов в RetailCRM, синхронизация с Supabase и уведомления в Telegram. Всё реализовано в **n8n** (low-code платформа).
+Автоматизация загрузки заказов в RetailCRM, синхронизация с Supabase и уведомления в Telegram. Всё реализовано в **n8n**.
 
-## Процесс работы и промпты к Claude
+## Процесс работы и промпты
 
 ### Шаг 1: Загрузка 50 заказов в RetailCRM
 
@@ -16,11 +16,18 @@
 - 503 ошибки при попытке отправить все 50 заказов сразу
 - Order already exists при повторных запусках
 
-**Что помогло (с помощью Claude):**
+**Что помогло:**
 - Настройка Batch в HTTP Request узле (по 1 заказу с интервалом 500ms)
 - Правильный формат: `Form-Urlencoded` с параметрами `site` и `order`
 - `JSON.stringify($json.order)` для корректной передачи вложенных данных
 - Добавление `Date.now()` в `externalId` для уникальности
+
+<img width="1224" height="338" alt="image" src="https://github.com/user-attachments/assets/97aac27e-6f11-48cc-9fa9-b27bccb9c1bf" />
+
+<img width="885" height="663" alt="image" src="https://github.com/user-attachments/assets/67ccc8c3-eebf-4e43-9ce0-834072a52353" />
+
+
+
 
 ---
 
